@@ -13,9 +13,9 @@ public class Main {
             System.out.println("0. Exit");
             choice = s.nextInt();
             if (choice == 1) {
+                Menu.menu();
                 if (LogIn.ulogin()){
                     System.out.println("Login successful!");
-                    Menu.menu();
                 }
                 else
                     System.out.println("Login failed!");
