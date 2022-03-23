@@ -17,7 +17,8 @@ public class Menu {
         ArrayList<student> students = new ArrayList<student>();
         
         choice = s.nextInt();
-        while (choice != 0){
+        while (choice != 0)
+        {
             if (choice == 1){
                 System.out.println("Enter student name: ");
                 String name = s.nextLine();
@@ -56,13 +57,14 @@ public class Menu {
                 System.out.println("2. Sort via ID");
                 int sort = s.nextInt();
                 if (sort == 1){
-                    sortViaName(students);
+                    student.sortViaName(students);
                 }
                 if (sort == 2){
-                    sortViaID(students);
+                    student.sortViaID(students);
                 }
             }
 
+        }
+        s.close();
     }
-    
 }

@@ -37,48 +37,26 @@ public class student {
         }
         else return "Fail";
     }
-
+    
     public String toString(){
         return "Student Name: " + name + "ID: " + id + "Result: " + result ;
     }
-
-    //sort via marks
-    public static void sortViaMark(student[] students){
-        for (int i = 0; i < students.length; i++){
-            for (int j = 0; j < students.length - 1; j++){
-                if (students[j].getMark() > students[j+1].getMark()){
-                    student temp = students[j];
-                    students[j] = students[j+1];
-                    students[j+1] = temp;
-                }
+        //add a student
+        public static void addStudent(student[] students){
+            Scanner s = new Scanner(System.in);
+            System.out.println("Enter student name: ");
+            String name = s.nextLine();
+            System.out.println("Enter student ID: ");
+            String id = s.nextLine();
+            System.out.println("Enter student mark: ");
+            int mark = s.nextInt();
+            student[] temp = new student[students.length + 1];
+            for (int i = 0; i < students.length; i++){
+                temp[i] = students[i];
             }
+            temp[students.length] = new student(name, id, mark);
+            students = temp;
         }
-    }
-    //sort via name
-    public static void sortViaName(student[] students){
-        for (int i = 0; i < students.length; i++){
-            for (int j = 0; j < students.length - 1; j++){
-                if (students[j].name.compareTo(students[j+1].name) > 0){
-                    student temp = students[j];
-                    students[j] = students[j+1];
-                    students[j+1] = temp;
-                }
-            }
-        }
-    }
-    //sort via id
-    public static void sortViaID(student[] students){
-        for (int i = 0; i < students.length; i++){
-            for (int j = 0; j < students.length - 1; j++){
-                if (students[j].id.compareTo(students[j+1].id) > 0){
-                    student temp = students[j];
-                    students[j] = students[j+1];
-                    students[j+1] = temp;
-                }
-            }
-        }
-    }
-
     //vidw all students
     public static void viewAllStudents(student[] students){
         for (int i = 0; i < students.length; i++){
@@ -97,25 +75,43 @@ public class student {
             }
         }
     }
-
-    //add a student
-    public static void addStudent(student[] students){
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter student name: ");
-        String name = s.nextLine();
-        System.out.println("Enter student ID: ");
-        String id = s.nextLine();
-        System.out.println("Enter student mark: ");
-        int mark = s.nextInt();
-        student[] temp = new student[students.length + 1];
+    //sort via marks
+    public static void sortViaMark(student[] students){
         for (int i = 0; i < students.length; i++){
-            temp[i] = students[i];
+            for (int j = 0; j < students.length - 1; j++){
+                if (students[j].getMark() > students[j+1].getMark()){
+                    student temp = students[j];
+                    students[j] = students[j+1];
+                    students[j+1] = temp;
+                }
+            }
         }
-        temp[students.length] = new student(name, id, mark);
-        students = temp;
     }
-    
 
+    //sort via name
+    public static void sortViaName(ArrayList<student> students){
+        for (int i = 0; i < students.size(); i++){
+            for (int j = 0; j < students.size() - 1; j++){
+                if (students.get(j).name.compareTo(students.get(j+1).name) > 0){
+                    student temp = students.get(j);
+                    students.set(j, students.get(j+1));
+                    students.set(j+1, temp);
+                }
+            }
+        }
+    }
+    //sort via id
+    public static void sortViaID(ArrayList<student> students){
+        for (int i = 0; i < students.size(); i++){
+            for (int j = 0; j < students.size() - 1; j++){
+                if (students.get(j).id.compareTo(students.get(j+1).id) > 0){
+                    student temp = students.get(j);
+                    students.set(j, students.get(j+1));
+                    students.set(j+1, temp);
+                }
+            }
+        }
+    }
 
     
 }
