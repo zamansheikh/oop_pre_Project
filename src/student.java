@@ -57,6 +57,10 @@ public class Student {
         }
         temp[students.length] = new Student(name, id, mark);
         students = temp;
+        System.out.println("Student added successfully");
+        s.nextLine();
+        s.nextLine();
+        s.nextLine();
         s.close();
     }
 

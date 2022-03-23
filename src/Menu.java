@@ -7,6 +7,8 @@ public class Menu {
         ArrayList<Student> students = new ArrayList<Student>();
         int choice = -1;
         do{
+            // System.out.print("\033[H\033[2J");  
+            // System.out.flush(); 
             System.out.println("Welcome to the main menu!");
             System.out.println("Please select an option:");
             System.out.println("1. Add a student");
