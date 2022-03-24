@@ -8,7 +8,6 @@ public class LogIn {
         String username = s.nextLine(); 
         System.out.println("Enter your password: ");
         String password = s.nextLine();
-        s. close();
         if (username.equals("admin") && password.equals("admin")){
             return true;
         }

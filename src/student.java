@@ -39,7 +39,7 @@ public class Student {
     }
 
     public String toString() {
-        return "Student Name: " + name + "ID: " + id + "Result: " + result;
+        return "Student Name: " + name + "\nID: " + id + "\nResult: " + result + "\n";
     }
 
     // add a student

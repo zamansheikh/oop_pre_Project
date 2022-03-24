@@ -1,6 +1,6 @@
 import java.util.*;
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args){
 
         boolean isRunning = true;
         Scanner s = new Scanner(System.in);
@@ -13,19 +13,18 @@ public class Main {
             System.out.println("0. Exit");
             choice = s.nextInt();
             if (choice == 1) {
-                Menu.menu();
-                if (LogIn.ulogin()){
+
+                if (LogIn.ulogin()) {
                     System.out.println("Login successful!");
-                }
-                else
+                    Menu menu = new Menu();
+                } else
                     System.out.println("Login failed!");
             }
-            if (choice == 0){
+            if (choice == 0) {
                 isRunning = false;
-            } 
+            }
 
         }
-        s.close();
 
 
     }
